@@ -53,8 +53,6 @@ const ResultsTable = ({ searchParams }: ResultsTableProps) => {
     enabled: queryEnabled,
   });
 
-  console.log("university: ", universities);
-
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const totalPages = Math.max(

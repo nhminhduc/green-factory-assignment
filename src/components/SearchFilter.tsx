@@ -8,13 +8,11 @@ interface Props {
 const SearchFilter: React.FC<Props> = ({ onSearch }) => {
   const [name, setName] = useState("");
   const [country, setCountry] = useState("");
-  const debouncedName = useDebounce(name, 500);
-  const debouncedCountry = useDebounce(country, 500);
+  const debouncedName = useDebounce(name, 300);
+  const debouncedCountry = useDebounce(country, 300);
 
   useEffect(() => {
-    if (debouncedName || debouncedCountry) {
-      onSearch(debouncedName, debouncedCountry);
-    }
+    onSearch(debouncedName, debouncedCountry);
   }, [debouncedName, debouncedCountry, onSearch]);
 
   return (
